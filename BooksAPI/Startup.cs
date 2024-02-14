@@ -55,7 +55,7 @@ public static class Startup
 
         #region Add DB Context to DI Container
         builder.Services.AddDbContext<AppDbContext>(opt =>
-            opt.UseSqlServer(builder.Configuration.GetConnectionString("LocalDB")));
+            opt.UseNpgsql(builder.Configuration.GetConnectionString("LocalDB")));
 
         builder.Services.AddIdentity<User, IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>()
