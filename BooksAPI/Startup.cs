@@ -15,7 +15,6 @@ using System.Security.Claims;
 using Asp.Versioning;
 using AspNetCoreRateLimit;
 using StackExchange.Redis;
-using AdminLab.Ants;
 
 namespace BooksAPI;
 
@@ -123,11 +122,6 @@ public static class Startup
                                                .GetConnectionString("RedisConnectionString");
         });
         #endregion
-
-        builder.Services.AddControllersWithViews();
-
-        var dbContext = builder.Services.BuildServiceProvider().GetService<AppDbContext>();
-        DatabaseContextInitializer<AppDbContext>.Initialize(dbContext);
     }
 
     public static void AddApplicationMiddlewares(
@@ -148,12 +142,6 @@ public static class Startup
         var versionSet = app.NewApiVersionSet()
                             .HasApiVersion(new ApiVersion(1, 0))
                             .Build();
-
-        //map controller route with area
-        app.MapControllerRoute(
-            "default", 
-            "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-        );
 
         app.MapControllers().WithApiVersionSet(versionSet);
         app.SeedRolesAndUsers().Wait();

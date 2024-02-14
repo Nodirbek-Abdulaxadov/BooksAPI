@@ -37,10 +37,4 @@
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="AdminLab">
-      <HintPath>..\..\..\..\source\repos\LazyCatLab\AdminLab\bin\Debug\net8.0\AdminLab.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
