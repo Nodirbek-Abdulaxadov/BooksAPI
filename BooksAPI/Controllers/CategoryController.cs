@@ -13,7 +13,7 @@ namespace BooksAPI.Controllers;
 [ApiVersion("1.0")]
 [ApiVersion("2.0")]
 [Route("api/v{version:apiVersion}/[controller]")]
-//[Authorize(Roles = "User, Admin")]
+[Authorize(Roles = "User, Admin")]
 public class CategoryController : ControllerBase
 {
     private readonly ICategoryService _categoryService;
