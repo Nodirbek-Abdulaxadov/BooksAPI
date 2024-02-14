@@ -38,5 +38,6 @@ jobs:
           cd BooksAPI
           echo ${{ secrets.PASSWORD }} | sudo -S systemctl stop books.service
           dotnet publish -c Release
+          echo ${{ secrets.PASSWORD }} | sudo -S systemctl daemon-reload
           echo ${{ secrets.PASSWORD }} | sudo -S systemctl start books.service
           exit
