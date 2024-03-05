@@ -1,0 +1,4 @@
+[INFO] : User with IP ::ffff:172.18.0.1 requested all books
+[INFO] : User with IP ::ffff:172.18.0.1 requested all books
+[INFO] : User with IP ::ffff:172.18.0.1 added new book
+[INFO] : User with IP ::ffff:172.18.0.1 requested all books
